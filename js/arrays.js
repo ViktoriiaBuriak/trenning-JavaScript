@@ -59,18 +59,59 @@ console.log(arr([1, 2, 3], [4, 5, 6]))
 // Середнє значення:
 // Створіть функцію, яка приймає масив чисел і повертає середнє значення (сума всіх елементів поділена на їхню кількість).
 
+function getNumb(numbers) {
+    let result = 0;
+    for (const number of numbers) {
+        result += number;
+    }
+    return result / numbers.length;
+}
 
+console.log(getNumb([2, 4, 6, 8, 10]))
 
 
 // Найбільший за абсолютною величиною:
 // Створіть функцію, яка приймає масив чисел і повертає найбільший елемент за абсолютною величиною.
 
+function maxNumb(numbers) {
+    if (numbers.length === 0) {
+        return undefined;
+    }
 
+    const maxNumber = Math.max(...numbers);
+    return maxNumber;
+}
+
+console.log(maxNumb([2, 3, 4, 5]))
 
 
 // Вилучення дублікатів:
 // Створіть функцію, яка приймає масив і повертає новий масив без дублікатів.
 
+function getArr(array) {
+    const newArr = array;
+    return newArr;
+}
+
+console.log(getArr([1, 2, 3, 4]))
+
+// Вилучення дублікатів в масиві означає видалення повторюючихся елементів,
+//     таким чином, щоб в кінцевому результаті в кожному елементі масиву було представлено тільки унікальне значення.
+function removeDuplicates(array) {
+    const uniqueValues = {};
+    const resultArray = [];
+
+    for (const value of array) {
+        if (!uniqueValues[value]) {
+            resultArray.push(value);
+            uniqueValues[value] = true;
+        }
+    }
+
+    return resultArray;
+}
+
+console.log(removeDuplicates([1, 2, 3, 4, 2, 3, 5]));
 
 
 
