@@ -179,18 +179,73 @@ addNewElement('class', 'p', 'Welcome');
 
 // Створіть функцію, яка отримує та виводить інформацію про розміри та положення вказаного елемента.
 
+function getSizeOfElement(id, size, position) {
+    const element = document.getElementById(id);
+    if(element) {
+    const topPosition = element.offsetTop;
+    const leftPosition = element.offsetLeft;
+    const width = element.offsetWidth;
+    const height = element.offsetHeight; 
 
+    console.log(`Element's top position: ${topPosition} px`);
+    console.log(`Element's left position: ${leftPosition} px`);
+    console.log(`Element's with: ${width} px`);
+    console.log(`Element's height: ${height} px`);
+    } else {
+        console.error(`Element with id '${id}' not found.`);
+    }
+}
+
+getSizeOfElement('class');
 
 
 //  Видалення всіх дочірніх елементів:
 
 // Напишіть функцію, яка видаляє всі дочірні елементи вказаного елемента.
 
+function removeChildElements(id) {
+    const element = document.getElementById(id);
+    if(element) {
+        element.innerHTML = '';
+        // або 
+        // while(element.firstChild) {
+        //     element.removeChild(element.firstChild);
+        // }
+    } else {
+        console.error(`Element with id '${id}' not found.`);
+    }
+}
 
+removeChildElements('parentElementId')
 
 
 //  Робота з подіями:
 
 // Створіть функцію, яка призначає обробник подій для вказаного елемента, який викликається при кліці на елементі і змінює його текст або стилі.
 
+// function handleClickEvent() {
+//     // Отримати доступ до цільового елемента
+//     const targetElement = document.getElementById('yourElementId');
+
+//     // Виконати потрібні зміни, наприклад, змінити текст
+//     targetElement.textContent = 'Новий текст';
+
+//     // Або змінити стилі
+//     targetElement.style.color = 'blue';
+// }
+
+// // Отримання доступу до цільового елемента
+// const targetElement = document.getElementById('yourElementId');
+
+// targetElement.addEventListener('click', handleClickEvent);
+
+function handleClickEvent() {
+    // Локальна змінна, доступна тільки всередині цієї функції
+    const targetElement = document.getElementById('yourElementId');
+    targetElement.textContent = 'Новий текст';
+    targetElement.style.color = 'blue';
+}
+
+// Призначення обробника подій для кліку
+document.getElementById('yourElementId').addEventListener('click', handleClickEvent);
 

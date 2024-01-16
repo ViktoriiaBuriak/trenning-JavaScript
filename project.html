@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/project.css">
+</head>
+<body>
+<h1>Projeck list</h1>
+<form class="project-form">
+    <label for="project-input">Project title</label>
+    <input class="project-input" type="text" name="project-input" id="project-input" placeholder="Enter project title">
+    <label for="description">Project description</label>
+    <textarea class="project-text" name="description" id="description" cols="30" rows="10" placeholder="Enter project description"></textarea>
+    <button class="add-btn" type="button">Add subtask</button>
+    <div class="project-subtask"></div>
+    <label for="data">Select the due date</label>
+    <input class="project-data" type="date" name="data" id="data">
+    <button class="project-btn" type="submit">Add</button>
+</form>
+
+<ul class="project-list"></ul>
+
+    <script type="module" src="./js/project.js"></script>
+</body>
+</html>
